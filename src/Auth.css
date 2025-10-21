@@ -1,0 +1,122 @@
+.auth-container {
+  background: linear-gradient(135deg, #ff9900 0%, #2d1a00 100%);
+  color: #fff;
+  max-width: 350px;
+  margin: 40px auto;
+  padding: 2.5rem 2rem 2rem 2rem;
+  border-radius: 2rem;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Full page auth layout */
+.auth-page {
+  min-height: 100vh;
+  background: #232328;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.auth-header {
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 2rem;
+}
+
+.logo-link {
+  text-decoration: none;
+}
+
+.auth-page .auth-container {
+  margin: 0;
+  max-width: 450px;
+  width: 100%;
+}
+
+.auth-subtitle {
+  text-align: center;
+  color: #ccc;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.auth-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.form-row input {
+  flex: 1;
+}
+
+.auth-footer {
+  text-align: center;
+  margin-top: 1rem;
+  color: #ccc;
+}
+.auth-container h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+.auth-container form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.auth-container input {
+  padding: 0.8rem 1rem;
+  border-radius: 1rem;
+  border: none;
+  font-size: 1rem;
+  outline: none;
+  background: #fff;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+.auth-btn {
+  background: #ffb300;
+  color: #222;
+  font-weight: 700;
+  border: none;
+  border-radius: 1rem;
+  padding: 0.8rem 0;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background 0.2s;
+}
+.auth-btn:hover {
+  background: #ff9900;
+}
+.auth-link {
+  color: #ffb300;
+  cursor: pointer;
+  font-weight: 600;
+  margin-left: 0.3rem;
+}
+.auth-link:hover {
+  text-decoration: underline;
+}
+.auth-error {
+  color: #ff3333;
+  background: #fff3f3;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  text-align: center;
+}

@@ -1,0 +1,54 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Backend exclusions - ignore all backend related files
+../backend/
+../server.js
+../*.js
+../package.json
+../package-lock.json
+../.env
+../node_modules/
+../logs/
+../uploads/
+../temp/
+../dist/
+
+# Database and sensitive files
+../database/
+../*.db
+../*.sqlite
+../*.sqlite3
+../config/
+../secrets/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
