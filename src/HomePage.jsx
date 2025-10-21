@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import API_BASE_URL from './config/api';
 import './HomePage.css';
 
 function HomePage() {
@@ -47,7 +48,7 @@ function HomePage() {
 
   const fetchFeaturedProducts = async () => {
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/appliances`);
+      const response = await fetch(`${API_BASE_URL}/api/appliances`);
       if (response.ok) {
         const data = await response.json();
         // Get first 6 products as featured

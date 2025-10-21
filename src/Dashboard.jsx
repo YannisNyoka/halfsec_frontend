@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import API_BASE_URL from './config/api';
 import './Dashboard.css';
 
 function Dashboard() {
@@ -67,7 +68,7 @@ function Dashboard() {
 
   const fetchAppliances = async () => {
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/appliances`, {
+      const response = await fetch(`${API_BASE_URL}/api/appliances`, {
         headers: {
           'Content-Type': 'application/json'
         }

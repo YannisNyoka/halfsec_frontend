@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
+import API_BASE_URL from './config/api';
 import './ProductPage.css';
 
 function ProductPage() {
@@ -63,7 +64,7 @@ function ProductPage() {
 
   const fetchProduct = async () => {
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/appliances/${id}`);
+      const response = await fetch(`${API_BASE_URL}/api/appliances/${id}`);
       if (response.ok) {
         const data = await response.json();
         setProduct(data.appliance);
@@ -81,7 +82,7 @@ function ProductPage() {
 
   const fetchReviews = async () => {
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/reviews?productId=${id}`);
+      const response = await fetch(`${API_BASE_URL}/api/reviews?productId=${id}`);
       if (response.ok) {
         const data = await response.json();
         setReviews(data.reviews || []);
@@ -155,7 +156,7 @@ function ProductPage() {
     }
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/reviews`, {
+      const response = await fetch(`${API_BASE_URL}/api/reviews`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

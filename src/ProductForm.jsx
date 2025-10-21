@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import API_BASE_URL from './config/api';
 import './ProductForm.css';
 
 const ProductForm = ({ product, onSave, onCancel }) => {
@@ -128,8 +129,8 @@ const ProductForm = ({ product, onSave, onCancel }) => {
     try {
       const token = localStorage.getItem('token');
       const url = product 
-        ? `${import.meta.env.VITE_API_URL}/api/admin/products/${product._id}`
-        : `${import.meta.env.VITE_API_URL}/api/admin/products`;
+        ? `${API_BASE_URL}/api/admin/products/${product._id}`
+        : `${API_BASE_URL}/api/admin/products`;
       
       const method = product ? 'PUT' : 'POST';
 

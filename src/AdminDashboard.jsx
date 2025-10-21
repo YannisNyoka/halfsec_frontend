@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import ProductForm from './ProductForm';
+import API_BASE_URL from './config/api';
 import './AdminDashboard.css';
 
 function AdminDashboard() {
@@ -52,7 +53,7 @@ function AdminDashboard() {
   const loadAdminData = async () => {
     try {
       // Load products
-      const productsResponse = await fetch(`${import.meta.env.VITE_API_URL}/api/appliances`);
+      const productsResponse = await fetch(`${API_BASE_URL}/api/appliances`);
       if (productsResponse.ok) {
         const productsData = await productsResponse.json();
         setProducts(productsData.appliances || []);
