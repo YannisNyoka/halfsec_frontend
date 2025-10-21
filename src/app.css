@@ -5,6 +5,20 @@
   text-align: center;
 }
 
+/* Mobile-first responsive app container */
+@media (max-width: 768px) {
+  #app {
+    padding: 1rem 0.5rem;
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  #app {
+    padding: 0.5rem 0.25rem;
+  }
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;

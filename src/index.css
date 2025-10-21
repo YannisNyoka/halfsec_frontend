@@ -13,6 +13,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -28,6 +32,68 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+}
+
+/* Mobile-first responsive base */
+@media (max-width: 768px) {
+  body {
+    display: block;
+    place-items: unset;
+  }
+}
+
+/* Ensure all containers are mobile-friendly */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 0.5rem;
+  }
+}
+
+/* Mobile Utility Classes */
+.mobile-hidden {
+  display: block;
+}
+
+.mobile-only {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-hidden {
+    display: none !important;
+  }
+  
+  .mobile-only {
+    display: block !important;
+  }
+  
+  .mobile-flex {
+    display: flex !important;
+  }
+  
+  .mobile-grid {
+    display: grid !important;
+  }
+}
+
+/* Touch-friendly buttons for mobile */
+@media (max-width: 768px) {
+  button, .btn, a[role="button"] {
+    min-height: 44px; /* iOS/Android recommended touch target */
+    min-width: 44px;
+  }
+  
+  input, select, textarea {
+    min-height: 44px;
+    font-size: 16px; /* Prevent zoom on iOS */
+  }
 }
 
 h1 {
