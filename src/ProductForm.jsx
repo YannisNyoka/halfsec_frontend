@@ -128,8 +128,8 @@ const ProductForm = ({ product, onSave, onCancel }) => {
     try {
       const token = localStorage.getItem('token');
       const url = product 
-        ? `http://localhost:3000/api/admin/products/${product._id}`
-        : 'http://localhost:3000/api/admin/products';
+        ? `${import.meta.env.VITE_API_URL}/api/admin/products/${product._id}`
+        : `${import.meta.env.VITE_API_URL}/api/admin/products`;
       
       const method = product ? 'PUT' : 'POST';
 

@@ -72,7 +72,7 @@ const ProductManagement = () => {
   const loadProducts = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:3001/api/appliances');
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/appliances`);
       if (response.ok) {
         const data = await response.json();
         const formattedProducts = (data.appliances || []).map(product => ({
@@ -103,7 +103,7 @@ const ProductManagement = () => {
 
   const loadCategories = async () => {
     try {
-      const response = await fetch('http://localhost:3001/api/categories');
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/categories`);
       if (response.ok) {
         const data = await response.json();
         setCategories(data);
@@ -125,7 +125,7 @@ const ProductManagement = () => {
 
   const loadBrands = async () => {
     try {
-      const response = await fetch('http://localhost:3001/api/brands');
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/brands`);
       if (response.ok) {
         const data = await response.json();
         setBrands(data);
@@ -281,7 +281,7 @@ const ProductManagement = () => {
       
       if (editingProduct) {
         // Update existing product
-        response = await fetch(`http://localhost:3001/api/products/${editingProduct._id}`, {
+        response = await fetch(`${import.meta.env.VITE_API_URL}/api/products/${editingProduct._id}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',
@@ -291,7 +291,7 @@ const ProductManagement = () => {
         });
       } else {
         // Add new product
-        response = await fetch('http://localhost:3001/api/products', {
+        response = await fetch(`${import.meta.env.VITE_API_URL}/api/products`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -338,7 +338,7 @@ const ProductManagement = () => {
         const user = JSON.parse(userData);
         const token = user.token;
 
-        const response = await fetch(`http://localhost:3001/api/products/${productId}`, {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/products/${productId}`, {
           method: 'DELETE',
           headers: {
             'Authorization': `Bearer ${token}`
@@ -408,7 +408,7 @@ const ProductManagement = () => {
           break;
       }
 
-      const response = await fetch('http://localhost:3001/api/products/bulk', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/products/bulk`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -939,7 +939,7 @@ const ProductManagement = () => {
           const user = JSON.parse(userData);
           const token = user.token;
 
-          const response = await fetch('http://localhost:3001/api/inventory', {
+          const response = await fetch(`${import.meta.env.VITE_API_URL}/api/inventory`, {
             headers: {
               'Authorization': `Bearer ${token}`
             }
@@ -967,7 +967,7 @@ const ProductManagement = () => {
           const user = JSON.parse(userData);
           const token = user.token;
 
-          const response = await fetch(`http://localhost:3001/api/products/${productId}/stock`, {
+          const response = await fetch(`${import.meta.env.VITE_API_URL}/api/products/${productId}/stock`, {
             method: 'PATCH',
             headers: {
               'Content-Type': 'application/json',
@@ -979,7 +979,7 @@ const ProductManagement = () => {
           if (response.ok) {
             showNotification('Stock updated successfully!');
             // Reload inventory data
-            const inventoryResponse = await fetch('http://localhost:3001/api/inventory', {
+            const inventoryResponse = await fetch(`${import.meta.env.VITE_API_URL}/api/inventory`, {
               headers: { 'Authorization': `Bearer ${token}` }
             });
             if (inventoryResponse.ok) {

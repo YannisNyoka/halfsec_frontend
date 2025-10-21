@@ -47,7 +47,7 @@ function HomePage() {
 
   const fetchFeaturedProducts = async () => {
     try {
-      const response = await fetch('http://localhost:3001/api/appliances');
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/appliances`);
       if (response.ok) {
         const data = await response.json();
         // Get first 6 products as featured

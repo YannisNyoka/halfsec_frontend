@@ -52,7 +52,7 @@ function AdminDashboard() {
   const loadAdminData = async () => {
     try {
       // Load products
-      const productsResponse = await fetch('http://localhost:3001/api/appliances');
+      const productsResponse = await fetch(`${import.meta.env.VITE_API_URL}/api/appliances`);
       if (productsResponse.ok) {
         const productsData = await productsResponse.json();
         setProducts(productsData.appliances || []);

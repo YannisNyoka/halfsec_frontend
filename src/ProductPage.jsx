@@ -63,12 +63,12 @@ function ProductPage() {
 
   const fetchProduct = async () => {
     try {
-      const response = await fetch(`http://localhost:3001/api/appliances/${id}`);
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/appliances/${id}`);
       if (response.ok) {
         const data = await response.json();
         setProduct(data.appliance);
-        // Check wishlist status after product is loaded
-        setTimeout(checkWishlistStatus, 100);
+        // Load wishlist status after product loads
+        setTimeout(() => checkWishlistStatus(), 100);
       } else {
         setError('Product not found');
       }
@@ -81,7 +81,7 @@ function ProductPage() {
 
   const fetchReviews = async () => {
     try {
-      const response = await fetch(`http://localhost:3001/api/reviews?productId=${id}`);
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/reviews?productId=${id}`);
       if (response.ok) {
         const data = await response.json();
         setReviews(data.reviews || []);
@@ -155,7 +155,7 @@ function ProductPage() {
     }
 
     try {
-      const response = await fetch('http://localhost:3001/api/reviews', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/reviews`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
